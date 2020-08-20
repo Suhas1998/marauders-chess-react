@@ -15,7 +15,9 @@ var rooms = {
     users:0
   }
 };
+
 const PORT = process.env.PORT || 3001;
+const INDEX = '/../../build';
 
 io.on('connection', (socket) => {
   console.log('a user connected');
@@ -60,6 +62,8 @@ io.on('connection', (socket) => {
   });
 });  
 
-server.listen(PORT, () => {
+server
+.use((req, res) => res.sendFile(INDEX, { root: __dirname }))
+.listen(PORT, () => {
   console.log('listening on :' + PORT);
 });

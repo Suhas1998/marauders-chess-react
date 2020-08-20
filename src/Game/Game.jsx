@@ -146,7 +146,8 @@ export default class Game extends Component {
     joinRoom(roomId)
     {
         console.log(roomId);
-        this.socket  = io(serverURI);
+        // this.socket  = io(serverURI);
+        this.socket  = io();
         
         this.socket.on('connect', () => {
             console.log("socket connected");
@@ -184,7 +185,8 @@ export default class Game extends Component {
     }
 
     startNewRoom(){
-        this.socket  = io(serverURI);
+        // this.socket  = io(serverURI);
+        this.socket  = io();
         
         const samePC = false;
         const gameRunning = true;
