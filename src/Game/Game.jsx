@@ -12,7 +12,7 @@ import OutsideGame from './ui/outsideGame.jsx';
 
 import io from 'socket.io-client';
 
-var serverURI = '/'; 
+var serverURI = "/"; 
 
 export default class Game extends Component {
     constructor() {

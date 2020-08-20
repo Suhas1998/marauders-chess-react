@@ -1,4 +1,6 @@
-const server = require('http').createServer();
+const express = require('express')
+const app = express()
+const server = require('http').Server(app);
 const io = require('socket.io')(server);
 
 /*
@@ -18,6 +20,9 @@ var rooms = {
 
 const PORT = process.env.PORT || 3001;
 const INDEX = '/../../build';
+
+
+app.use( express.static(__dirname + '/../../build'))
 
 io.on('connection', (socket) => {
   console.log('a user connected');
@@ -62,8 +67,6 @@ io.on('connection', (socket) => {
   });
 });  
 
-server
-.use((req, res) => res.sendFile(INDEX, { root: __dirname }))
-.listen(PORT, () => {
+server.listen(PORT, () => {
   console.log('listening on :' + PORT);
 });
