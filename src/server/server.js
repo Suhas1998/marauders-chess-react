@@ -17,7 +17,7 @@ var rooms = {
 };
 
 const PORT = process.env.PORT || 3001;
-const INDEX = '../../build';
+const INDEX = '/../../build';
 
 io.on('connection', (socket) => {
   console.log('a user connected');
