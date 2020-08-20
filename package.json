@@ -16,7 +16,7 @@
     "socket.io": "^2.3.0"
   },
   "scripts": {
-    "start": "concurrently 'npm run react' 'npm run server'",
+    "dev": "concurrently 'npm run react' 'npm run server'",
     "react": "react-scripts start",
     "server": "nodemon src/server/server.js",
     "build": "react-scripts build",
