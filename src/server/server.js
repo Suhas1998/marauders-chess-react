@@ -15,7 +15,7 @@ var rooms = {
     users:0
   }
 };
-const PORT = 3001;
+const PORT = process.env.PORT || 3001;
 
 io.on('connection', (socket) => {
   console.log('a user connected');
